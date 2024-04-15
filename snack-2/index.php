@@ -5,7 +5,13 @@ Con un form passare come parametri GET name, mail e age e verificare (cercando i
 
 $userName=$_GET['name'];
 $userEmail=$_GET['email'];
-$userAge=$_GET['age']
+$userAge=$_GET['age'];
+
+if(strlen($userName) < 3 && strpos($userEmail, '@') !== false && strpos($userEmail, '.') !== false && is_numeric($userAge)){
+    echo "Access Granted";
+} else {
+    echo "Access Denied";
+};
 ?>
 
 <!DOCTYPE html>
